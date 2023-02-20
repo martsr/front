@@ -1,3 +1,4 @@
+import '../styles/pages/ContactPage.css'
 const ContactPage = (props) =>{
     return(
         <main>

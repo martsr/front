@@ -1,3 +1,4 @@
+import '../styles/pages/AboutUs.css'
 const AboutUs = (props) =>{
     return(
         <main>

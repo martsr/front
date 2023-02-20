@@ -1,0 +1,34 @@
+.intro-container {
+    background-color: aliceblue;
+    border-radius: 5px;
+    display: flex;
+    margin: 1px;
+    flex-direction: row;
+    line-height: 40px;
+    gap: 4px;
+
+}
+
+.intro-img img {
+    border-radius: 5px;
+}
+
+.intro {
+    align-self: center;
+    text-align: center;
+}
+
+.pic-collage {
+    display: flex;
+    flex-direction: row;
+    max-width: 100%;
+}
+
+.subart2 {
+    display: flex;
+}
+
+.subcollage img {
+    object-fit: fill;
+    max-width: 100%;
+}

@@ -1,3 +1,4 @@
+import '../styles/pages/GalleryPage.css'
 const GalleryPage = (props) =>{
     return(
         <main>

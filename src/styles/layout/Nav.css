@@ -1,0 +1,36 @@
+nav {
+    background-color: #F0F4F4;
+    line-height: 56px;
+    color: black;
+    font-size: 18px;
+}
+
+
+.menu ul {
+    list-style: none;
+    display: flex;
+    padding-left: 10px;
+    margin: 0;
+    justify-content: center;
+}
+
+nav ul li a {
+    margin: 0px 10px;
+    text-decoration: none;
+    color: black;
+
+}
+
+ul li a:hover {
+    background-color: #E3E7E7;
+    border-radius: 5px;
+}
+
+ul li a.activo {
+    background-color: #E3E7E7;
+    border-radius: 5px;
+}
+
+NavLink{
+    cursor: pointer;
+}

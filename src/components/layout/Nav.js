@@ -1,4 +1,5 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import '../../styles/layout/Nav.css'
 const Nav = (props) => {
     return (
 
@@ -7,19 +8,19 @@ const Nav = (props) => {
                 <div className="menu">
                     <ul>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/gallery">Virtual Gallery</Link>
+                            <NavLink className={({isActive})=> isActive ? "activo":undefined} to="/gallery">Virtual Gallery</NavLink>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/exhibition">Exhibitions</Link>
+                            <NavLink className={({isActive})=> isActive ? "activo":undefined} to="/exhibition">Exhibitions</NavLink>
                         </li>
                         <li className="nav-item ">
-                            <Link className="nav-link" to="/"><i className="fa-solid fa-i"></i>Insel</Link>
+                            <NavLink className={({isActive})=> isActive ? "activo":undefined} to="/"><i className="fa-solid fa-i"></i> Insel</NavLink>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/aboutUs">About Us</Link>
+                            <NavLink className={({isActive})=> isActive ? "activo":undefined} to="/aboutUs">About Us</NavLink>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/contact">Contact</Link>
+                            <NavLink className={({isActive})=> isActive ? "activo":undefined} to="/contact">Contact</NavLink>
                         </li>
                     </ul>
                 </div>
