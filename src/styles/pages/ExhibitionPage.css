@@ -1,0 +1,46 @@
+.exhibitions {
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+}
+
+.exhibition {
+    margin-top: 5px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    background-color: aliceblue;
+    gap: 15px;
+    align-items: center;
+    opacity: 0.9;
+
+}
+
+.exh-img {
+    height: 225px;
+    width: 225px;
+    border-radius: 10px;
+
+}
+
+.exh-info h2 {
+    margin-bottom: 0px;
+    font-style: bold;
+    font-weight: 300;
+
+}
+
+.exh-info h4 {
+    margin: 0px;
+    padding: 0px;
+    font-weight: bolder;
+}
+
+.exh-info {
+    padding-left: 10px;
+    align-self: center;
+}
+
+.exhibition:nth-child(even) {
+    flex-direction: row-reverse;
+}

@@ -1,0 +1,25 @@
+.foter-container {
+    background-color: #F0F4F4;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 10px;
+    color: black;
+    margin-top: 10px;
+    border-radius: 10px;
+
+}
+
+.foter-links ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    font-size: 20px;
+    margin: 0px;
+
+}
+
+.foter-links ul a {
+    text-decoration: none;
+    color: rgb(66, 64, 64);
+}
