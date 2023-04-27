@@ -1,63 +1,41 @@
-import { Link } from "react-router-dom";
-import '../styles/pages/ExhibitionPage.css'
-const ExhibitionsPage = (props) =>{
-    return(
-        <main>
-        <div className="main-container">
-            <div className="exhibitions">
-                <div className="exhibition">
-                    <div className="exh-info">
-                        <h2>Thinking in Colour - Ana Scaldaferro</h2>
-                        <h4>From February 6th to March 24th </h4>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem minima corporis
-                            aperiam
-                            velit iste. Eligendi, assumenda minima? Corporis quisquam aspernatur animi porro totam
-                            magni!
-                            Saepe voluptates quidem consectetur! Enim, accusamus. Lear more about her work
-                            <strong> <Link className="exhibition-link" to="#">here</Link></strong>
-                        </p>
-                    </div>
-                    <div className="exh-imgs"> <img src="img/exhibition-img/hammersaw.jpg" className="exh-img"
-                            alt="crystal saw"/></div>
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import ExhibitionItem from "../components/exhibitions/ExhibitionItem";
+import "../styles/pages/ExhibitionPage.css";
 
-                </div>
-                <div className="exhibition">
-                    
-                    <div className="exh-info">
-                        <h2>Road to Kyoto - Naomi Okubo</h2>
-                        <h4>From April 3th to May 12th </h4>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem minima corporis
-                            aperiam
-                            velit iste. Eligendi, assumenda minima? Corporis quisquam aspernatur animi porro totam
-                            magni!
-                            Saepe voluptates quidem consectetur! Enim, accusamus. Lear more about her work
-                            <strong> <Link className="exhibition-link" to="#">here</Link></strong>
-                        </p>
-                    </div>
-                    <div className="exh-imgs">
-                        <img src="img/exhibition-img/img11.png.webp" className="exh-img" alt="shoes sole on sand"/>
-                    </div>
-                </div>
-                <div className="exhibition" >
-                    <div className="exh-info">
-                        <h2>Exspiravit - Decorum</h2>
-                        <h4>From May 15th to June 30th </h4>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem minima corporis
-                            aperiam
-                            velit iste. Eligendi, assumenda minima? Corporis quisquam aspernatur animi porro totam
-                            magni!
-                            Saepe voluptates quidem consectetur! Enim, accusamus. Lear more about her work
-                            <strong> <Link className="exhibition-link" to="#">here</Link></strong>
-                        </p>
-                    </div>
-                    <div className="exh-imgs">
-                        <img src="img/exhibition-img/img10.png.webp" className="exh-img" alt="watch collage"/>
-                    </div>
+const ExhibitionsPage = (props) => {
+  const [loading, setLoading] = useState(false);
+  const [exhibitions, setExhibitions] = useState([]);
 
-                </div>
-            </div>
+  useEffect(() => {
+    const loadExhibitions = async () => {
+      setLoading(true);
+      const response = await axios.get("http://localhost:3000/api/exhibitions");
+      setExhibitions(response.data);
+      setLoading(false);
+    };
+    loadExhibitions();
+  }, []);
+  return (
+    <main>
+      <div className="main-container">
+        <div className="exhibitions">
+          {loading ? (
+            <p>Loading ...</p>
+          ) : (
+            exhibitions.map((item) => (
+              <ExhibitionItem
+                key={item.id}
+                title={item.title}
+                subtitle={item.subtitle}
+                description={item.description}
+                image={item.img}
+              />
+            ))
+          )}
         </div>
+      </div>
     </main>
-    );
-}
+  );
+};
 export default ExhibitionsPage;
